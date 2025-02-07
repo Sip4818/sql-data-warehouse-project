@@ -25,7 +25,8 @@ CREATE TABLE silver.crm_prd_info(
 	prd_cost INT,
 	prd_line NVARCHAR(50),
 	prd_start_dt DATE,
-	prd_end_dt DATE
+	prd_end_dt DATE,
+	cst_create_data DATE
 );
 IF OBJECT_ID('silver.crm_sales_details','U') IS NOT NULL
 	DROP TABLE silver.crm_sales_details;
@@ -39,20 +40,23 @@ create table silver.crm_sales_details(
 	sls_sales int,
 	sls_quantity int,
 	sls_price int,
+	cst_create_data DATE
 )
 IF OBJECT_ID('silver.erp_CUST_AZ12','U') IS NOT NULL
 	DROP TABLE silver.erp_CUST_AZ12;
 create table silver.erp_CUST_AZ12(
 	CID nvarchar(50),
 	BDATE DATE,
-	GEN NVARCHAR(10)
+	GEN NVARCHAR(10),
+	cst_create_data DATE
 
 )
 IF OBJECT_ID('silver.erp_LOC_A101','U') IS NOT NULL
 	DROP TABLE silver.erp_LOC_A101;
 CREATE TABLE silver.erp_LOC_A101(
 	CID nvarchar(50),
-	CNTRY nvarchar(50)
+	CNTRY nvarchar(50),
+	cst_create_data DATE
 )
 IF OBJECT_ID('silver.erp_PX_CAT_G1V2','U') IS NOT NULL
 	DROP TABLE silver.erp_PX_CAT_G1V2;
@@ -60,7 +64,8 @@ CREATE TABLE silver.erp_PX_CAT_G1V2(
 	ID NVARCHAR(50),
 	CAT NVARCHAR(50),
 	SUBCAT NVARCHAR(50),
-	MAINTANANCE NVARCHAR(10)
+	MAINTANANCE NVARCHAR(10),
+	cst_create_data DATE
 )
 
 
